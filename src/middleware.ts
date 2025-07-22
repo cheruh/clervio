@@ -9,9 +9,18 @@ export async function middleware(req: NextRequest) {
     },
   })
 
+  // Check if Supabase environment variables are available
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+
+  // If Supabase environment variables are missing, skip authentication checks
+  if (!supabaseUrl || !supabaseAnonKey) {
+    return response
+  }
+
   const supabase = createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    supabaseUrl,
+    supabaseAnonKey,
     {
       cookies: {
         get(name: string) {
@@ -55,9 +64,17 @@ export async function middleware(req: NextRequest) {
     }
   )
   
-  const {
-    data: { session },
-  } = await supabase.auth.getSession()
+  let session = null
+  try {
+    const {
+      data: { session: userSession },
+    } = await supabase.auth.getSession()
+    session = userSession
+  } catch (error) {
+    // If session check fails, continue without authentication
+    console.error('Failed to get session in middleware:', error)
+    return response
+  }
 
   // Define protected routes that require authentication
   const protectedRoutes = ['/onboarding', '/dashboard']
