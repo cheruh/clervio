@@ -19,7 +19,7 @@ export default function ResetPasswordPage() {
   const [success, setSuccess] = useState(false)
   const [validSession, setValidSession] = useState(false)
   const router = useRouter()
-  const searchParams = useSearchParams()
+  // const searchParams = useSearchParams()
 
   useEffect(() => {
     // Check if we have a valid session for password reset

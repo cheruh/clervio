@@ -107,8 +107,8 @@ export default function BlogPage() {
           <div className="bg-card rounded-lg shadow-sm border p-6 text-center">
             <h2 className="text-xl font-semibold mb-4">More Articles Coming Soon</h2>
             <p className="text-muted-foreground mb-6">
-              We're working on more insightful articles about behavioral intelligence and its applications.
-              Stay tuned for regular updates!
+              We&apos;re working on more insightful articles about behavioral intelligence and its applications.
+            Stay tuned for regular updates!
             </p>
             <Button disabled>Subscribe to Updates</Button>
           </div>

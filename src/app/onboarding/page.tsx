@@ -43,7 +43,7 @@ const steps = [
   {
     id: 2,
     title: 'Your Account Setup',
-    subtitle: 'Let\'s personalize your experience',
+    subtitle: 'Let&apos;s personalize your experience',
     icon: Users,
     content: (
       <div className="space-y-6">
@@ -81,7 +81,7 @@ const steps = [
   {
     id: 3,
     title: 'Early Access',
-    subtitle: 'You\'re among the first to experience Clervio',
+    subtitle: 'You&apos;re among the first to experience Clervio',
     icon: Rocket,
     content: (
       <div className="text-center space-y-6">
@@ -91,7 +91,7 @@ const steps = [
         <div>
           <h3 className="text-2xl font-bold mb-4">Welcome to the Future</h3>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-            You're now part of an exclusive group of early adopters who will shape the future of user analytics.
+            You&apos;re now part of an exclusive group of early adopters who will shape the future of user analytics.
           </p>
         </div>
         
@@ -173,7 +173,7 @@ export default function OnboardingPage() {
             </div>
           </div>
           <h1 className="text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-            You're All Set!
+            You&apos;re All Set!
           </h1>
           <p className="text-muted-foreground mb-8">
             Welcome to Clervio, {user.user_metadata?.full_name || user.email}. Your journey into advanced user analytics begins now.

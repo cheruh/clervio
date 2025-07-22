@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
-import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog';
+import { Dialog, DialogContent } from '@/components/ui/dialog';
 import { LoadingSpinner } from '@/components/ui/loading-spinner';
 import { SuccessAnimation } from '@/components/ui/success-animation';
 import { CTALoadingState } from '@/components/sections/cta-loading-state';
@@ -108,7 +108,7 @@ const CTA = () => {
                 <div className="text-center py-6">
                   <SuccessAnimation className="mb-4" />
                   <h3 className="text-xl font-medium">Thanks for Your Interest!</h3>
-                  <p className="text-sm text-muted-foreground mt-2 mb-4">We've added you to our waitlist. We'll notify you when Clervio launches.</p>
+                  <p className="text-sm text-muted-foreground mt-2 mb-4">We've added you to our waitlist. We&apos;ll notify you when Clervio launches.</p>
                   <Button 
                     variant="outline" 
                     onClick={() => setIsDialogOpen(false)}
