@@ -108,7 +108,7 @@ const CTA = () => {
                 <div className="text-center py-6">
                   <SuccessAnimation className="mb-4" />
                   <h3 className="text-xl font-medium">Thanks for Your Interest!</h3>
-                  <p className="text-sm text-muted-foreground mt-2 mb-4">We've added you to our waitlist. We&apos;ll notify you when Clervio launches.</p>
+                  <p className="text-sm text-muted-foreground mt-2 mb-4">We have added you to our waitlist. We will notify you when Clervio launches.</p>
                   <Button 
                     variant="outline" 
                     onClick={() => setIsDialogOpen(false)}

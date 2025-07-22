@@ -29,7 +29,7 @@ export default function DocsPage() {
           <div className="bg-card rounded-lg shadow-sm border p-6 mb-8">
             <h2 className="text-xl font-semibold mb-4">Getting Started</h2>
             <p className="mb-4">
-              Welcome to Clervio&apos;s documentation. This guide will help you integrate and use Clervio&apos;s Behavioral Intelligence Platform in your applications.
+              Welcome to Clervio documentation. This guide will help you integrate and use Clervio Behavioral Intelligence Platform in your applications.
             </p>
             
             <h3 className="text-lg font-medium mt-6 mb-3">Installation</h3>

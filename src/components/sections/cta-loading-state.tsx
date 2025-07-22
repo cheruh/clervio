@@ -8,7 +8,7 @@ export function CTALoadingState() {
       <LoadingSpinner size="lg" />
       <p className="text-lg font-medium text-center">Processing your request...</p>
       <p className="text-sm text-muted-foreground text-center">
-        We&apos;re adding you to our waitlist. Please wait a moment.
+        We are adding you to our waitlist. Please wait a moment.
       </p>
     </div>
   )

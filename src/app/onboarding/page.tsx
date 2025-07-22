@@ -58,7 +58,7 @@ const steps = [
         <div className="bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 rounded-lg p-6">
           <h4 className="font-semibold mb-4 flex items-center">
             <Shield className="w-5 h-5 text-primary mr-2" />
-            What's Next?
+            What is Next?
           </h4>
           <ul className="space-y-3">
             <li className="flex items-start">
@@ -91,7 +91,7 @@ const steps = [
         <div>
           <h3 className="text-2xl font-bold mb-4">Welcome to the Future</h3>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-            You&apos;re now part of an exclusive group of early adopters who will shape the future of user analytics.
+            You are now part of an exclusive group of early adopters who will shape the future of user analytics.
           </p>
         </div>
         
@@ -173,7 +173,7 @@ export default function OnboardingPage() {
             </div>
           </div>
           <h1 className="text-3xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
-            You&apos;re All Set!
+            You are All Set!
           </h1>
           <p className="text-muted-foreground mb-8">
             Welcome to Clervio, {user.user_metadata?.full_name || user.email}. Your journey into advanced user analytics begins now.
