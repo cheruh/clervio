@@ -70,7 +70,7 @@ export default function AboutPage() {
           <h2 className="text-2xl font-semibold mb-6">Our Team</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            {teamMembers.map((member, index) => (
+            {teamMembers.map((member) => (
               <div
                 key={member.name}
                 className="bg-card rounded-lg shadow-sm border overflow-hidden"
