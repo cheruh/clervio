@@ -8,6 +8,9 @@ import { Button } from '@/components/ui/button'
 import { useAuth } from '@/contexts/auth-context'
 import { AnimatedLogo } from '@/components/ui/animated-logo'
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+
 export default function ForgotPasswordPage() {
   const [email, setEmail] = useState('')
   const [loading, setLoading] = useState(false)

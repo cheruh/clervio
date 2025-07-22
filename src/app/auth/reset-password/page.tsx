@@ -9,6 +9,9 @@ import { Button } from '@/components/ui/button'
 import { supabase } from '@/lib/supabase'
 import { AnimatedLogo } from '@/components/ui/animated-logo'
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+
 export default function ResetPasswordPage() {
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
@@ -24,7 +27,7 @@ export default function ResetPasswordPage() {
   useEffect(() => {
     // Check if we have a valid session for password reset
     const checkSession = async () => {
-      const { data: { session } } = await supabase.auth.getSession()
+      const { data: { session } } = await supabase?.auth.getSession() ?? { data: { session: null } }
       if (session) {
         setValidSession(true)
       } else {
@@ -34,7 +37,7 @@ export default function ResetPasswordPage() {
         const refreshToken = hashParams.get('refresh_token')
         
         if (accessToken && refreshToken) {
-          const { error } = await supabase.auth.setSession({
+          const { error } = await supabase!.auth.setSession({
             access_token: accessToken,
             refresh_token: refreshToken
           })
@@ -85,7 +88,7 @@ export default function ResetPasswordPage() {
       return
     }
 
-    const { error } = await supabase.auth.updateUser({
+    const { error } = await supabase!.auth.updateUser({
       password: password
     })
     

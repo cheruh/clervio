@@ -5,6 +5,9 @@ import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
 import { Home } from 'lucide-react'
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+
 export default function NotFound() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-4">

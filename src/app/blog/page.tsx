@@ -6,6 +6,9 @@ import { Button } from '@/components/ui/button'
 import { ArrowLeft } from 'lucide-react'
 import { motion } from 'framer-motion'
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+
 const blogPosts = [
   {
     id: 1,

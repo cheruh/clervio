@@ -4,7 +4,10 @@ import { useEffect } from 'react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { motion } from 'framer-motion'
-import { RefreshCcw, Home } from 'lucide-react'
+import { Home, RefreshCcw } from 'lucide-react'
+
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
 
 export default function Error({
   error,

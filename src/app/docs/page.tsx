@@ -5,6 +5,9 @@ import { Button } from '@/components/ui/button'
 import { ArrowLeft } from 'lucide-react'
 import { motion } from 'framer-motion'
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+
 export default function DocsPage() {
   return (
     <div className="min-h-screen bg-background">

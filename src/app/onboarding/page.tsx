@@ -8,6 +8,9 @@ import { useAuth } from '@/contexts/auth-context'
 import { AnimatedLogo } from '@/components/ui/animated-logo'
 import { useRouter } from 'next/navigation'
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+
 const steps = [
   {
     id: 1,

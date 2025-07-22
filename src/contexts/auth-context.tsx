@@ -24,9 +24,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const router = useRouter()
 
   useEffect(() => {
+    // Only run on client side when supabase is available
+    if (!supabase || typeof window === 'undefined') {
+      setLoading(false)
+      return
+    }
+
     // Get initial session
     const getInitialSession = async () => {
-      const { data: { session } } = await supabase.auth.getSession()
+      const { data: { session } } = await supabase?.auth.getSession() ?? { data: { session: null } }
       setSession(session)
       setUser(session?.user ?? null)
       setLoading(false)
@@ -53,6 +59,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, [router])
 
   const signUp = async (email: string, password: string, fullName?: string) => {
+    if (!supabase) {
+      return { error: { message: 'Supabase client not available' } as AuthError }
+    }
     try {
       const { error } = await supabase.auth.signUp({
         email,
@@ -70,6 +79,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }
 
   const signIn = async (email: string, password: string) => {
+    if (!supabase) {
+      return { error: { message: 'Supabase client not available' } as AuthError }
+    }
     try {
       const { error } = await supabase.auth.signInWithPassword({
         email,
@@ -82,10 +94,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }
 
   const signOut = async () => {
+    if (!supabase) return
     await supabase.auth.signOut()
   }
 
   const resetPassword = async (email: string) => {
+    if (!supabase) {
+      return { error: { message: 'Supabase client not available' } as AuthError }
+    }
     try {
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
         redirectTo: `${window.location.origin}/auth/reset-password`,

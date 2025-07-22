@@ -53,6 +53,9 @@ import { ScrollToTop } from "@/components/ui/scroll-to-top";
 import { Analytics } from "@/components/analytics/analytics";
 import { AuthProvider } from "@/contexts/auth-context";
 
+// Force dynamic rendering
+export const dynamic = 'force-dynamic'
+
 export default function RootLayout({
   children,
 }: Readonly<{
