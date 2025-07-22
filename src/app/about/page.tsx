@@ -54,7 +54,7 @@ export default function AboutPage() {
               At Clervio, we believe that understanding human behavior is the key to creating better digital experiences. Our mission is to help websites and applications understand not just what users do, but why they do it.
             </p>
             <p className="mb-4">
-              We&apos;re building a behavioral intelligence platform that goes beyond traditional analytics by measuring the depth of human interaction — capturing the cognitive, emotional, and behavioral signals that reveal true user intent and experience.
+              We&#39;re building a behavioral intelligence platform that goes beyond traditional analytics by measuring the depth of human interaction — capturing the cognitive, emotional, and behavioral signals that reveal true user intent and experience.
             </p>
             <p>
               By providing these deeper insights, we empower businesses to create more intuitive, responsive, and human-centered digital products that truly meet user needs.
@@ -105,7 +105,7 @@ export default function AboutPage() {
           <div className="bg-card rounded-lg shadow-sm border p-6 text-center">
             <h2 className="text-xl font-semibold mb-4">Join Our Team</h2>
             <p className="text-muted-foreground mb-6">
-              We&apos;re always looking for talented individuals who are passionate about understanding human behavior and creating better digital experiences.
+              We&#39;re always looking for talented individuals who are passionate about understanding human behavior and creating better digital experiences.
             </p>
             <Button disabled>View Open Positions</Button>
           </div>
