@@ -1,10 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { ArrowLeft } from 'lucide-react'
-import { motion } from 'framer-motion'
 
 const teamMembers = [
   {
@@ -40,12 +38,7 @@ export default function AboutPage() {
           </Link>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-4xl mx-auto"
-        >
+        <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl font-bold mb-6">About Clervio</h1>
           
           <div className="bg-card rounded-lg shadow-sm border p-6 mb-8">
@@ -78,27 +71,21 @@ export default function AboutPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             {teamMembers.map((member, index) => (
-              <motion.div
+              <div
                 key={member.name}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-card rounded-lg shadow-sm border overflow-hidden"
               >
-                <div className="relative h-48 w-full bg-muted">
-                  <Image 
-                    src={member.imageSrc} 
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                  />
+                <div className="relative h-48 w-full bg-muted flex items-center justify-center">
+                  <div className="text-4xl font-bold text-muted-foreground">
+                    {member.name.split(' ').map(n => n[0]).join('')}
+                  </div>
                 </div>
                 <div className="p-6">
                   <h3 className="text-lg font-semibold">{member.name}</h3>
                   <p className="text-primary text-sm mb-2">{member.role}</p>
                   <p className="text-muted-foreground text-sm">{member.bio}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
 
@@ -109,7 +96,7 @@ export default function AboutPage() {
             </p>
             <Button disabled>View Open Positions</Button>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   )
