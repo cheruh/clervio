@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Clervio Landing Page
+
+A modern, responsive landing page for Clervio - a behavioral intelligence platform that helps websites understand how users think, feel, and decide.
+
+## Features
+
+- 🎨 Modern, responsive design with dark/light theme support
+- 📧 Integrated waitlist functionality with Loops email service
+- 🎭 Smooth animations with Framer Motion
+- 📱 Progressive Web App (PWA) support
+- 🔍 SEO optimized with proper meta tags and sitemap
+- 🚀 Built with Next.js 15 and TypeScript
+- 💅 Styled with Tailwind CSS and shadcn/ui components
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ 
+- npm, yarn, pnpm, or bun
+- Loops account for email service (optional for development)
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd clervio
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Set up environment variables:
+```bash
+cp .env.example .env.local
+```
+
+Edit `.env.local` and add your Loops API key:
+```
+LOOPS_API_KEY=your_loops_api_key_here
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+```
+
+4. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment on Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Prepare for Deployment
 
-## Learn More
+Ensure your code is committed and pushed to your Git repository.
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Deploy to Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Go to [Vercel](https://vercel.com) and sign in
+2. Click "New Project" and import your repository
+3. Configure environment variables in Vercel dashboard:
+   - `LOOPS_API_KEY`: Your Loops API key
+   - `NEXT_PUBLIC_SITE_URL`: Your production domain
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 3. Configure Loops Email Service
 
-## Deploy on Vercel
+1. Sign up at [Loops](https://loops.so)
+2. Get your API key from Settings > API
+3. Add the API key to your Vercel environment variables
+4. Configure your domain DNS records to point to Loops (if using custom domain)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 4. Custom Domain Setup
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. In Vercel dashboard, go to your project settings
+2. Add your custom domain
+3. Configure DNS records as instructed by Vercel
+4. Update `NEXT_PUBLIC_SITE_URL` environment variable
+
+## Project Structure
+
+```
+src/
+├── app/                    # Next.js app directory
+│   ├── api/               # API routes
+│   │   └── waitlist/      # Waitlist API endpoint
+│   ├── about/             # About page
+│   ├── blog/              # Blog page
+│   ├── demo/              # SDK demo page
+│   ├── docs/              # Documentation page
+│   └── globals.css        # Global styles
+├── components/            # React components
+│   ├── analytics/         # Analytics components
+│   ├── layout/           # Layout components (header, footer)
+│   ├── sections/         # Page sections (hero, features, etc.)
+│   └── ui/               # Reusable UI components
+└── lib/                  # Utility functions
+```
+
+## Key Components
+
+- **Hero Section**: Main landing area with value proposition
+- **Features**: Showcase of platform capabilities
+- **Use Cases**: Real-world applications
+- **Testimonials**: Customer feedback and social proof
+- **Pricing**: Subscription plans and pricing tiers
+- **CTA**: Call-to-action with waitlist signup
+- **SDK Demo**: Interactive demonstration of the Clervio SDK
+
+## Environment Variables
+
+| Variable | Description | Required |
+|----------|-------------|---------|
+| `LOOPS_API_KEY` | Loops email service API key | Yes (for waitlist) |
+| `NEXT_PUBLIC_SITE_URL` | Your site's URL | Yes (for SEO) |
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is private and proprietary to Clervio.
