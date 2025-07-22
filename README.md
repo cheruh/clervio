@@ -94,7 +94,6 @@ src/
 ├── app/                    # Next.js app directory
 │   ├── api/               # API routes
 │   │   └── waitlist/      # Waitlist API endpoint
-│   ├── about/             # About page
 │   ├── blog/              # Blog page
 │   ├── demo/              # SDK demo page
 │   ├── docs/              # Documentation page
